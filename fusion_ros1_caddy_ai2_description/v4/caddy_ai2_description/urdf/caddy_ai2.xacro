@@ -1,0 +1,223 @@
+<?xml version="1.0" ?>
+<robot name="caddy_ai2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find caddy_ai2_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find caddy_ai2_description)/urdf/caddy_ai2.trans" />
+<xacro:include filename="$(find caddy_ai2_description)/urdf/caddy_ai2.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.3751746943893013 0.044790387571770916 0.34395145211741857" rpy="0 0 0"/>
+    <mass value="6904.153997841791"/>
+    <inertia ixx="1012.974128" iyy="3519.422832" izz="3979.942956" ixy="237.292652" iyz="-86.910765" ixz="271.47264"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="steering_hub_left_1">
+  <inertial>
+    <origin xyz="1.575538229325879e-06 0.045036547470792276 -0.06500000000000006" rpy="0 0 0"/>
+    <mass value="4.494220600265263"/>
+    <inertia ixx="0.01229" iyy="0.01341" izz="0.008238" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.825 -0.33 -0.065" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/steering_hub_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.825 -0.33 -0.065" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/steering_hub_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="steering_hub_right_1">
+  <inertial>
+    <origin xyz="-1.5755382292148568e-06 -0.045036547470792276 -0.06500000000000006" rpy="0 0 0"/>
+    <mass value="4.494220600265263"/>
+    <inertia ixx="0.01229" iyy="0.01341" izz="0.008238" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.825 0.33 -0.065" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/steering_hub_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.825 0.33 -0.065" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/steering_hub_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_front_right_1">
+  <inertial>
+    <origin xyz="3.306198004260352e-07 -0.1000001611093454 4.2976393018370405e-17" rpy="0 0 0"/>
+    <mass value="268.03659227457297"/>
+    <inertia ixx="4.517093" iyy="7.294149" izz="4.517093" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.824998 0.403058 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/wheel_front_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.824998 0.403058 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/wheel_front_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_front_left_1">
+  <inertial>
+    <origin xyz="-3.306198000929683e-07 0.1000001611093454 4.2976393018370405e-17" rpy="0 0 0"/>
+    <mass value="268.03659227457297"/>
+    <inertia ixx="4.517093" iyy="7.294149" izz="4.517093" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.825002 -0.403058 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/wheel_front_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.825002 -0.403058 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/wheel_front_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rear_right_1">
+  <inertial>
+    <origin xyz="2.294870193875198e-08 -0.10000000305175777 2.0302065772370454e-09" rpy="0 0 0"/>
+    <mass value="268.03659227457297"/>
+    <inertia ixx="4.517093" iyy="7.294149" izz="4.517093" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.825 0.4018 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/wheel_rear_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.825 0.4018 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/wheel_rear_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rear_left_1">
+  <inertial>
+    <origin xyz="2.294870193875198e-08 0.10000000305175777 2.0302065806276914e-09" rpy="0 0 0"/>
+    <mass value="268.03659227457297"/>
+    <inertia ixx="4.517093" iyy="7.294149" izz="4.517093" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.825 -0.4018 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/wheel_rear_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.825 -0.4018 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/wheel_rear_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="SICK_LMS291_1">
+  <inertial>
+    <origin xyz="0.07087581656184394 1.701676984410963e-06 -0.009503984572258706" rpy="0 0 0"/>
+    <mass value="29.182325361169905"/>
+    <inertia ixx="0.137412" iyy="0.137225" izz="0.100203" ixy="3e-06" iyz="3e-06" ixz="-0.005719"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.990124 -0.0 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/SICK_LMS291_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.990124 -0.0 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://caddy_ai2_description/meshes/SICK_LMS291_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="steer_left_joint" type="continuous">
+  <origin xyz="0.825 0.33 0.065" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="steering_hub_left_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="steer_right_joint" type="continuous">
+  <origin xyz="0.825 -0.33 0.065" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="steering_hub_right_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="front_right_joint" type="continuous">
+  <origin xyz="-2e-06 -0.073058 -0.065" rpy="0 0 0"/>
+  <parent link="steering_hub_right_1"/>
+  <child link="wheel_front_right_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="front_left_joint" type="continuous">
+  <origin xyz="2e-06 0.073058 -0.065" rpy="0 0 0"/>
+  <parent link="steering_hub_left_1"/>
+  <child link="wheel_front_left_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rear_right_joint" type="continuous">
+  <origin xyz="-0.825 -0.4018 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_rear_right_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="rear_left_joint" type="continuous">
+  <origin xyz="-0.825 0.4018 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_rear_left_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 7" type="fixed">
+  <origin xyz="0.990124 0.0 0.035" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="SICK_LMS291_1"/>
+</joint>
+
+</robot>
