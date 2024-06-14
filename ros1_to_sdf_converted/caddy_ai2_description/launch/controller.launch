@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find caddy_ai2_description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="caddy_ai2" args="steer_left_joint_position_controller steer_right_joint_position_controller front_right_joint_position_controller front_left_joint_position_controller rear_right_joint_position_controller rear_left_joint_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/caddy_ai2/joint_states"/>
+</node>
+
+</launch>
