@@ -1,0 +1,501 @@
+<sdf version='1.7'>
+  <model name='caddy_ai2'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.367908 0.044556 0.577616 0 -0 0</pose>
+        <mass>6940.53</mass>
+        <inertia>
+          <ixx>1016.26</ixx>
+          <ixy>239.54</ixy>
+          <ixz>284.716</ixz>
+          <iyy>3592.44</iyy>
+          <iyz>-87.3237</iyz>
+          <izz>4050.17</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__SICK_LMS291_1_collision_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/SICK_LMS291_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__SICK_LMS291_1_visual_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/SICK_LMS291_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='rear_left_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.825 0.4018 0.235 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>wheel_rear_left_1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_rear_left_1'>
+      <pose relative_to='rear_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.1 0 0 -0 0</pose>
+        <mass>268.037</mass>
+        <inertia>
+          <ixx>4.51709</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.29415</iyy>
+          <iyz>0</iyz>
+          <izz>4.51709</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_rear_left_1_collision'>
+        <pose>0.825 -0.4018 -0.235 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/wheel_rear_left_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_rear_left_1_visual'>
+        <pose>0.825 -0.4018 -0.235 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/wheel_rear_left_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='rear_right_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.825 -0.4018 0.235 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>wheel_rear_right_1</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_rear_right_1'>
+      <pose relative_to='rear_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.1 0 0 -0 0</pose>
+        <mass>268.037</mass>
+        <inertia>
+          <ixx>4.51709</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.29415</iyy>
+          <iyz>0</iyz>
+          <izz>4.51709</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_rear_right_1_collision'>
+        <pose>0.825 0.4018 -0.235 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/wheel_rear_right_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_rear_right_1_visual'>
+        <pose>0.825 0.4018 -0.235 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/wheel_rear_right_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='steer_left_joint' type='revolute'>
+      <pose relative_to='base_link'>0.825 0.33 0.3 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>steering_hub_left_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='steering_hub_left_1'>
+      <pose relative_to='steer_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.045037 -2e-06 -0.065 0 -0 0</pose>
+        <mass>4.49422</mass>
+        <inertia>
+          <ixx>0.01341</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01229</iyy>
+          <iyz>0</iyz>
+          <izz>0.008238</izz>
+        </inertia>
+      </inertial>
+      <collision name='steering_hub_left_1_collision'>
+        <pose>-0.825 -0.33 -0.3 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/steering_hub_left_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='steering_hub_left_1_visual'>
+        <pose>-0.825 -0.33 -0.3 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/steering_hub_left_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='front_left_joint' type='revolute'>
+      <pose relative_to='steering_hub_left_1'>0.073058 -2e-06 -0.065 0 -0 0</pose>
+      <parent>steering_hub_left_1</parent>
+      <child>wheel_front_left_1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_front_left_1'>
+      <pose relative_to='front_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.1 0 0 0 -0 0</pose>
+        <mass>268.037</mass>
+        <inertia>
+          <ixx>7.29415</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.51709</iyy>
+          <iyz>0</iyz>
+          <izz>4.51709</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_front_left_1_collision'>
+        <pose>-0.898058 -0.329998 -0.235 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/wheel_front_left_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_front_left_1_visual'>
+        <pose>-0.898058 -0.329998 -0.235 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/wheel_front_left_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='steer_right_joint' type='revolute'>
+      <pose relative_to='base_link'>0.825 -0.33 0.3 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>steering_hub_right_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='steering_hub_right_1'>
+      <pose relative_to='steer_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.045037 -2e-06 -0.065 0 -0 0</pose>
+        <mass>4.49422</mass>
+        <inertia>
+          <ixx>0.01341</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01229</iyy>
+          <iyz>0</iyz>
+          <izz>0.008238</izz>
+        </inertia>
+      </inertial>
+      <collision name='steering_hub_right_1_collision'>
+        <pose>-0.825 0.33 -0.3 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/steering_hub_right_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='steering_hub_right_1_visual'>
+        <pose>-0.825 0.33 -0.3 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/steering_hub_right_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='front_right_joint' type='revolute'>
+      <pose relative_to='steering_hub_right_1'>0.073058 -2e-06 -0.065 0 -0 0</pose>
+      <parent>steering_hub_right_1</parent>
+      <child>wheel_front_right_1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_front_right_1'>
+      <pose relative_to='front_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.1 0 0 0 -0 0</pose>
+        <mass>268.037</mass>
+        <inertia>
+          <ixx>7.29415</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.51709</iyy>
+          <iyz>0</iyz>
+          <izz>4.51709</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_front_right_1_collision'>
+        <pose>-0.898058 0.330002 -0.235 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/wheel_front_right_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_front_right_1_visual'>
+        <pose>-0.898058 0.330002 -0.235 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>package://caddy_ai2_sim_description/models/caddy_ai2/meshes/wheel_front_right_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <plugin name='control' filename='libgazebo_ros_control.so'/>
+    <frame name='lidar_joint' attached_to='base_link'>
+      <pose>0.990124 0 0.505 0 -0 0</pose>
+    </frame>
+    <frame name='SICK_LMS291_1' attached_to='lidar_joint'/>
+  </model>
+</sdf>
